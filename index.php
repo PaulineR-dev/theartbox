@@ -1,7 +1,15 @@
 <?php
     require 'header.php';
-    require 'oeuvres.php';
+    include 'bdd.php';
+
+    $cobdd = connexion();
+    
+    $donneesoeuvres = $cobdd->prepare('SELECT * FROM oeuvres');
+    $donneesoeuvres->execute();
+
+    $oeuvres = $donneesoeuvres->fetchAll();
 ?>
+
 <div id="liste-oeuvres">
     <?php foreach($oeuvres as $oeuvre): ?>
         <article class="oeuvre">
