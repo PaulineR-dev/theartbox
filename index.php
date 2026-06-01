@@ -10,6 +10,10 @@
     $oeuvres = $donneesoeuvres->fetchAll();
 ?>
 
+<?php if (isset($_GET['formulaireenvoye'])): ?>
+    <p>Le formulaire a bien été envoyé.</p>
+<?php endif; ?>
+
 <div id="liste-oeuvres">
     <?php foreach($oeuvres as $oeuvre): ?>
         <article class="oeuvre">
