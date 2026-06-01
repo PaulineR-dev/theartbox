@@ -1,5 +1,10 @@
 <?php require 'header.php'; ?>
 
+<?php if (isset($_GET['erreur'])): ?>
+    <p>Champs saisis non valides. Merci de recommencer.</p>
+<?php endif; ?>
+
+
 <form action="traitement.php" method="POST">
     <div class="champ-formulaire">
         <label for="titre">Titre de l'œuvre</label>
